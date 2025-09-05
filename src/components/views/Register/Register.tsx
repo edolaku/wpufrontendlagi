@@ -35,6 +35,30 @@ const Register = () => {
                             variant="bordered"
                             autoComplete="off"
                         />
+
+                        <Input
+                            type="text"
+                            label="Username"
+                            variant="bordered"
+                            autoComplete="off"
+                        />
+
+                        <Input
+                            type="email"
+                            label="Email"
+                            variant="bordered"
+                            autoComplete="off"
+                        />
+
+                        <Input
+                            type="password"
+                            label="Password"
+                            variant="bordered"
+                            autoComplete="off"
+                            endContent={
+                                
+                            }
+                        />  
                     </form>
 
                 </CardBody>
