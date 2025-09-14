@@ -1,10 +1,11 @@
 import AuthLayout from "@/components/layouts/AuthLayout";
+import RegisterSuccess from "@/components/views/Auth/RegisterSuccess";
 
 
 const RegisterSuccessPage = () => {
     return (
-        <AuthLayout title="wpufrontendlagi | Register">
-            <h1>Register Success</h1>
+        <AuthLayout title="wpufrontendlagi | Register Success">
+            <RegisterSuccess />
         </AuthLayout>
     )
 }

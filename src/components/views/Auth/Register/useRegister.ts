@@ -1,6 +1,6 @@
 // logic dari register:
 
-import authServices from "@/services/auth";
+import authServices from "@/services/auth.service";
 import { IRegister } from "@/types/Auth";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation } from "@tanstack/react-query";
