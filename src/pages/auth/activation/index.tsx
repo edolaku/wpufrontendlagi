@@ -17,7 +17,8 @@ const ActivationPage = (props: PropTypes) => {
 export async function getServerSideProps(context: { query: { code: string } }) {
     try {
         const result = await authServices.activation({ code: context.query.code });
-        console.log(result.data.data);
+        // console.log(result.data.data);
+        // console.log(context.query);
         
         if (result.data.data) {
             return {
@@ -32,6 +33,7 @@ export async function getServerSideProps(context: { query: { code: string } }) {
                 }
             }
         }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
         return {
             props: {
