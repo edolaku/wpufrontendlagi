@@ -35,7 +35,7 @@ export default NextAuth({
 
                 if (accessToken && result.status === 200 && user && me.status === 200) {
                     user.accessToken = accessToken;
-                    console.log("✅ [authorize nextauth.ts] user:", user);
+                    // console.log("✅ [authorize nextauth.ts] user:", user);
                     return user
                 } else {
                     console.log("❌ [authorize nextauth.ts] gagal login");
@@ -46,18 +46,18 @@ export default NextAuth({
     ],
     callbacks: {
         async jwt({ token, user }: { token: JWTExtended; user: UserExtended | null }) {
-            console.log("👉 [jwt nextauth.ts] before:", token, user);
+            // console.log("👉 [jwt nextauth.ts] before:", token, user);
             if (user) {
                 token.user = user;
             }
-            console.log("✅ [jwt nextauth.ts] after:", token);
+            // console.log("✅ [jwt nextauth.ts] after:", token);
             return token;
         },
         async session({ session, token }: { session: SessionExtended; token: JWTExtended }) {
-            console.log("👉 [session nextauth.ts] before:", session);
+            // console.log("👉 [session nextauth.ts] before:", session);
             session.user = token.user;
             session.accessToken = token.user?.accessToken;
-            console.log("✅ [session nextauth.ts] after:", session);
+            // console.log("✅ [session nextauth.ts] after:", session);
             return session
         }
     },
