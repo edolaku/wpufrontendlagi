@@ -21,7 +21,7 @@ export default NextAuth({
             async authorize(
                 credentials: Record<"identifier" | "password", string> | undefined
             ): Promise<UserExtended | null> {
-                console.log("👉 [authorize nextauth.ts] credentials:", credentials);
+                // console.log("👉 [authorize nextauth.ts] credentials:", credentials);
                 const { identifier, password } = credentials as { identifier: string, password: string };
                 const result = await authServices.login({
                     identifier,
@@ -35,7 +35,7 @@ export default NextAuth({
 
                 if (accessToken && result.status === 200 && user && me.status === 200) {
                     user.accessToken = accessToken;
-                    // console.log("✅ [authorize nextauth.ts] user:", user);
+                    console.log("✅ [authorize nextauth.ts] user:", user);
                     return user
                 } else {
                     console.log("❌ [authorize nextauth.ts] gagal login");
